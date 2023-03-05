@@ -44,10 +44,12 @@ class ChooseSlotWindow(QtWidgets.QWidget):
     def next_button_clicked(self):
         if self.morning_theory.isChecked():
             self.selected_slot = 0
-            print("Morning theory")
+            global ffcs_list
+            self.ffcs_list=pd.read_excel('data!!.xlsx', sheet_name='Morning slot')
         else:
             self.selected_slot = 1
-            print("Morning Labs")
+            global ffcs_list
+           self.ffcs_list=pd.read_exce('data!!.xlsx', sheet_name='Evening slot')
 
         # go to the next window
         # self.next_window = choose_subjects_window.ChooseSubjectsWindow()
